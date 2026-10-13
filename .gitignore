@@ -17,6 +17,3 @@ wheels/
 
 # Office lock files
 ~$*
-
-# open in Excel, moved to docs/ - delete root copy
-/adjacency_matrix.xlsx
