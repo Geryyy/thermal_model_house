@@ -13,7 +13,7 @@ Grey-box **RC thermal model** of a house near Weyer (Upper Austria), identified 
 ## Data
 
 - InfluxDB 2, bucket `homeassistant`. Tags are `entity_id`, `domain` and `friendly_name`; numeric values are in field `value`, attributes in their own fields.
-- All signals used are configured in [entities.py](rc-house/src/rc_house/entities.py).
+- All signals used are configured in [entities.py](src/rc_house/entities.py).
 - The pump state is the `hvac_action_str` attribute of the relay rooms' `climate` entities.
 - Credentials: `INFLUX_TOKEN` (and optionally `INFLUX_URL`), or `influx_api_token.txt` in the repo root (line 1 host, line 2 token). This file is git-ignored.
 
@@ -32,7 +32,6 @@ Caveats:
 ## Usage
 
 ```
-cd rc-house
 uv sync
 uv run jupyter lab              # notebooks/01_daten -> 02_rc_2r2c
 uv run python tests/test_rc.py  # synthetic parameter recovery
@@ -40,10 +39,10 @@ uv run python tests/test_rc.py  # synthetic parameter recovery
 
 | Path | Content |
 |---|---|
-| `rc-house/src/rc_house/influx.py` | Influx access, entity dump, zero-order-hold resampling |
-| `rc-house/src/rc_house/prep.py` | floor temperatures, pump duty, heat input |
-| `rc-house/src/rc_house/rc.py` | generic RC network: simulate, fit (±σ), heat load |
-| `rc-house/src/rc_house/models.py` | model structures with initial values |
-| `rc-house/notebooks/` | `01_daten` (data export), `02_rc_2r2c` (identification) |
+| `src/rc_house/influx.py` | Influx access, entity dump, zero-order-hold resampling |
+| `src/rc_house/prep.py` | floor temperatures, pump duty, heat input |
+| `src/rc_house/rc.py` | generic RC network: simulate, fit (±σ), heat load |
+| `src/rc_house/models.py` | model structures with initial values |
+| `notebooks/` | `01_daten` (data export), `02_rc_2r2c` (identification) |
 
 Conventions: SI units with temperatures in °C. Room IDs are lowercase without umlauts. Code is in English, plot labels in German.

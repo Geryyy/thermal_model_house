@@ -12,7 +12,7 @@ ORG_ID = "d504e6dc24b940e3"
 DEFAULT_URL = "https://influx.home.arpa"
 
 # influx_api_token.txt in the repo root: line 1 = host, line 2 = token (never commit)
-TOKEN_FILE = Path(__file__).resolve().parents[3] / "influx_api_token.txt"
+TOKEN_FILE = Path(__file__).resolve().parents[2] / "influx_api_token.txt"
 
 
 def _credentials() -> tuple[str, str]:

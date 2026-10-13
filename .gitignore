@@ -3,7 +3,10 @@ influx_api_token.txt
 .env
 
 # generated data
-rc-house/data/
+data/
+
+# old project folder, its .venv is still used by a running Jupyter - delete afterwards
+rc-house/
 
 # Python
 __pycache__/
