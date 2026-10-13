@@ -1,0 +1,25 @@
+[project]
+name = "rc-house"
+version = "0.1.0"
+description = "Grey-box RC thermal model of house Weyer"
+readme = "README.md"
+authors = [
+    { name = "Gerald Ebmer", email = "gerald.ebmer@outlook.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "influxdb-client>=1.50.0",
+    "jupyterlab>=4.6.4",
+    "matplotlib>=3.10.9",
+    "numpy>=2.2.6",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "scipy>=1.15.3",
+]
+
+[project.scripts]
+rc-house = "rc_house:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
